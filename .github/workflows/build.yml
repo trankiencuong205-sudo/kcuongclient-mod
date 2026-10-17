@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q util-client.zip
+      - name: Giai nen
+        run: |
+          ls -la
+          for z in *.zip; do unzip -q -o "$z"; done
+          ls -la
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
